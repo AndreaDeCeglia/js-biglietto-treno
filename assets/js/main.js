@@ -24,5 +24,5 @@ function FindOutPrice(){
         ticketPrice = ticketPrice.toFixed(2)
     }
 
-    document.getElementById('finalPrice').innerHTML = "The price of your journey will be:" +ticketPrice+ "€ !!";
+    document.getElementById('finalPrice').innerHTML = "The price of your journey will be: " +ticketPrice+ " € !!";
 }

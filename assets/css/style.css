@@ -3,3 +3,100 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    height: 100vh;
+    background-color: #202531;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    color: #FF14BD;
+    width: 50vw;
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form input{
+    margin: 1rem 0;
+    background-color: #202531;
+    color: #FF14BD;
+    text-align: center;
+    width: 50vw;
+    height: 3em;
+}
+
+form> h2{
+    text-align: center;
+    height: 3em;
+    color: #FF14BD;
+}
+
+.neon-button{
+    font-size: 2rem;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #202531;
+    color: #FF14BD;
+    border: 0.125em solid #FF14BD;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+
+    text-shadow: 0 0 0.125em white,
+    0 0 0.125 currentColor;
+
+    box-shadow: inset 0 0 0.5em 0 #FF14BD,
+    0 0 0.5em 0 #FF14BD;
+
+    position: relative;
+
+    transition: background-color 0.5s;
+}
+
+.neon-button::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background-color: #FF14BD;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(2em);
+    opacity: 0.7;
+}
+
+.neon-button::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em #FF14BD;
+    opacity: 1;
+    background-color: #FF14BD;
+    z-index: -1;
+    transition: 1s linear;
+}
+
+.neon-button:hover,
+.neon-button:focus{
+    background-color: #FF14BD;
+    color: #202531;
+    text-shadow: none;
+}
+
+.neon-button:hover::after{
+    opacity: 1;
+}
